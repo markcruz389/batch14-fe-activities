@@ -6,13 +6,8 @@ ul, li {
     padding:0;
 }
 
-ul.reset,
-ul.reset li,
-ul.reset ul li {
-   margin:0;
-   padding: 0;
-   text-indent: 0;
-   list-style-type: 0;
+ul {
+    list-style-type: none;
 }
 
 /* Generic elements */
@@ -39,9 +34,6 @@ a:link, a:visited {
 
 .text-bold {
     font-weight: bold;
-}
-
-#main-nav {
 }
 
 #logo-container {
@@ -84,4 +76,31 @@ section#banner {
         background-color: #05c2c9;
         border: 2px solid #05c2c9;
     }
+
+#main-nav {
+    padding: 0 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: #1B242F;
+}
+
+    #main-nav ul {
+        display: flex;
+    }
+
+    #main-nav li {
+        margin-right: 20px;
+    }
+
+    #main-nav a {
+        font-size: 1.1rm;
+        color: #fff;
+    }
+
+    #main-nav a:hover {
+        color: #05c2c9;
+    }
+
+
 
