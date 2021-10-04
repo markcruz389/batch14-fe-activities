@@ -20,7 +20,9 @@ body {
 header {
     padding: 0 200px;
     height: 100px;
-    background-color: #252934;
+    /* background-color: #252934; */
+    /* Custom background pattern */
+    
 }
 
 a:link, a:visited {
@@ -73,12 +75,25 @@ hr {
         max-width: 100%;
     }
 
+section#home {
+    background: 
+    radial-gradient(#1e3d59 3px, transparent 4px),
+    radial-gradient(#1e3d59 3px, transparent 4px),
+    linear-gradient(#252934 4px, transparent 0),
+    linear-gradient(45deg, transparent 74px, transparent 75px, #1e3d59 75px, #252934 76px, transparent 77px, transparent 109px),
+    linear-gradient(-45deg, transparent 75px, transparent 76px, #1e3d59 76px, #252934 77px, transparent 78px, transparent 109px), #252934;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
 section#banner {
     height: calc(100vh - 100px);
-    background-color: #252934;
+    /* background-color: #252934; */
     display: flex;
     justify-content: center;
     align-items: center;
+
+    
 }
 
     #banner-container {
@@ -119,11 +134,11 @@ section#banner {
     }
 
     #main-nav li {
-        margin-right: 20px;
+        margin-right: 40px;
     }
 
     #main-nav a {
-        font-size: 1.1rm;
+        font-size: 1.1rem;
         color: #fff;
     }
 
@@ -153,6 +168,12 @@ section#about {
         max-width: 100%;
         /* border: 5px solid #05c2c9; */
     }
+
+section#projects {
+    padding-top: 50px;
+    height: 100vh;
+    background-color: #F5F5F5;
+}
 
 
 
