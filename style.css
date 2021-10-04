@@ -14,6 +14,7 @@ ul {
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    color: #444649;
 }
 
 header {
@@ -28,12 +29,39 @@ a:link, a:visited {
     cursor: pointer;
 }
 
+hr {
+    border: none;
+    height: 5px;
+    width: 70px;
+    /* Set the hr color */
+    color: #444649; /* old IE */
+    background-color: #444649; /* Modern Browsers */
+}
+
 .text-teal {
     color: #05c2c9;
 }
 
 .text-bold {
     font-weight: bold;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-space-evenly {
+    justify-content: space-evenly;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444649;
 }
 
 #logo-container {
@@ -83,6 +111,7 @@ section#banner {
     display: flex;
     align-items: center;
     background-color: #1B242F;
+    border-bottom: 3px solid #05c2c9;
 }
 
     #main-nav ul {
@@ -101,6 +130,30 @@ section#banner {
     #main-nav a:hover {
         color: #05c2c9;
     }
+
+section#about {
+    padding-top: 50px;
+    height: 100vh;
+    /* display: flex;
+    justify-content: center; */
+}
+
+    #profile-container {
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    #profile-pic-container {
+        height: auto;
+        width: 300px;
+        color: #444649;
+    }
+
+    #profile-pic-container img{
+        max-width: 100%;
+        /* border: 5px solid #05c2c9; */
+    }
+
 
 
 
