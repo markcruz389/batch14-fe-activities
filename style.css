@@ -1,0 +1,87 @@
+/* Reset Default Browser Styles */
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+ul, li {
+    margin:0;
+    padding:0;
+}
+
+ul.reset,
+ul.reset li,
+ul.reset ul li {
+   margin:0;
+   padding: 0;
+   text-indent: 0;
+   list-style-type: 0;
+}
+
+/* Generic elements */
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+header {
+    padding: 0 200px;
+    height: 100px;
+    background-color: #252934;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+}
+
+.text-teal {
+    color: #05c2c9;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+#main-nav {
+}
+
+#logo-container {
+    height:auto;
+    width: 150px;
+}
+
+    #logo-container .logo {
+        max-width: 100%;
+    }
+
+section#banner {
+    height: calc(100vh - 100px);
+    background-color: #252934;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    #banner-container {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    #banner-message {
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+    
+    #banner-button {
+        padding: 10px 20px;
+        border: 2px solid #fff;
+        color: #fff;
+        font-size: 1.2rem;
+    }
+
+    #banner-button:hover {
+        background-color: #05c2c9;
+        border: 2px solid #05c2c9;
+    }
+
