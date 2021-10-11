@@ -1,10 +1,20 @@
 @use '../abstracts' as *;
 
+.title-container {
+    position: absolute;
+    top: 7.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3vmin;
+    color: #f5f5f5
+}
+
 .outer-board {
     @extend %absolute-center;
     @include square-div(70vmin);
     @include background-image("https://www.transparenttextures.com/patterns/wood-pattern.png", $secondary-color, center, contain, no-repeat);
     filter: brightness(0.95);
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
 
     &__content {
         display: flex;
@@ -24,6 +34,7 @@
     &__label {
         @extend %flex-center;
         font-size: 2vmin;
+        color: $dark-green;
        
         &--left {
             height: 7.5vmin;
