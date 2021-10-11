@@ -1,0 +1,16 @@
+// This is for all Sass mixins
+
+// Set background image
+@mixin background-image ($url, $color, $position, $size, $repeat) {
+    background-color: $color;
+    background-image: url($url);
+    background-size: $size; 
+    background-position: $position;
+    background-repeat: $repeat;
+}
+
+// Square div
+@mixin square-div ($height) {
+    height: $height;
+    aspect-ratio: 1;
+}

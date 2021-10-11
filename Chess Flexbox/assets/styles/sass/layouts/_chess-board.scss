@@ -1,0 +1,133 @@
+@use '../abstracts' as *;
+
+.outer-board {
+    @extend %absolute-center;
+    @include square-div(70vmin);
+    @include background-image("https://www.transparenttextures.com/patterns/wood-pattern.png", $secondary-color, center, contain, no-repeat);
+    filter: brightness(0.95);
+
+    &__content {
+        display: flex;
+        position: absolute;
+
+        &--left {
+            flex-direction: column-reverse;    
+            top: 5vmin;
+        }
+
+        &--bottom { 
+            bottom: -0.5vmin;
+            left: 5vmin;
+        }
+    }
+
+    &__label {
+        @extend %flex-center;
+        font-size: 2vmin;
+        color: grey;
+       
+        &--left {
+            height: 7.5vmin;
+            width: 4.5vmin;         
+        }
+
+        &--bottom {
+            height: 4.5vmin;
+            width: 7.5vmin;  
+        }
+    }
+}
+
+.border-div {
+    @extend %absolute-center;
+
+    &--dark {
+        @include square-div(61vmin);
+        background: $primary-color;
+    }
+
+    &--light {
+        @include square-div(62vmin);
+        background: $white;
+    }
+}
+
+.chess-board {
+    @extend %absolute-center;
+    @include square-div(60vmin);
+    display: flex;
+    flex-wrap: wrap;
+    
+    &__cell {    
+        @extend %flex-center;
+        @include square-div(7.5vmin);
+        font-size: 5.5vmin;
+
+        &--light {
+            @include background-image("https://www.transparenttextures.com/patterns/wood-pattern.png", $secondary-color, center, cover, no-repeat);
+        }
+
+        &--dark {
+            @include background-image("https://www.transparenttextures.com/patterns/ravenna.png", $primary-color, center, cover, no-repeat);
+        }
+    }
+
+    &__piece {
+        font-size: 6vmin;
+    }
+}
+
+/* Animations */
+
+.chess-board__cell:nth-child(53) .chess-board__piece {
+    animation: move-1 1s;
+    animation-fill-mode: forwards;
+}
+
+.chess-board__cell:nth-child(13) .chess-board__piece {
+    animation: move-2 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+.chess-board__cell:nth-child(63) .chess-board__piece {
+    animation: move-3 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+}
+
+.chess-board__cell:nth-child(2) .chess-board__piece {
+    animation: move-4 10s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+}
+
+.chess-board__cell:nth-child(62) .chess-board__piece {
+    animation: move-5 10s;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+}
+
+.chess-board__cell:nth-child(7) .chess-board__piece {
+    animation: move-6 10s;
+    animation-fill-mode: forwards;
+    animation-delay: 5s;
+}
+
+.chess-board__cell:nth-child(64) .chess-board__piece {
+    animation: move-7-1 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+}
+
+.chess-board__cell:nth-child(61) .chess-board__piece {
+    animation: move-7-2 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+}
+
+.chess-board__cell:nth-child(9) .chess-board__piece {
+    animation: move-8 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 7s;
+}
