@@ -1,0 +1,290 @@
+/* Reset Default Browser Styles */
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p, input {
+    margin:0;
+    padding:0;
+}
+
+/* Generic elements */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    color: #f5f0e1;
+
+    /* Custom background pattern */
+    background: 
+        radial-gradient(#1e3d59 3px, transparent 4px),
+        radial-gradient(#1e3d59 3px, transparent 4px),
+        linear-gradient(#f5f0e1 4px, transparent 0),
+        linear-gradient(45deg, transparent 74px, transparent 75px, #1e3d59 75px, #a4a4a4 76px, transparent 77px, transparent 109px),
+        linear-gradient(-45deg, transparent 75px, transparent 76px, #1e3d59 76px, #a4a4a4 77px, transparent 78px, transparent 109px), #f5f0e1;
+    background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+    background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+main {
+    padding: 200px;
+    padding-bottom: 150px;
+}
+
+footer {
+    padding-bottom: 50px;
+    font-weight: 600;
+    text-align: center;
+    color: #ff6e40;
+}
+
+input[type=text], input[type=email],
+input[type=number], textarea, select {
+    margin-top: 5px;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+}
+
+input[type=text], input[type=email],
+input[type=number], select {
+    height: 35px;
+}
+
+input[type=radio], input[type=checkbox] {
+    height: 50px;
+    width: 50px;
+}
+
+input::placeholder,
+select:required:invalid {
+    font-style: italic;
+    font-size: 1rem;
+    color: #8e8e8e;
+}
+
+/* Custom class styles */
+.text-bold {
+    font-weight: 600;
+}
+
+.form-group {
+    margin: 20px 0;
+}
+
+.input-label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.input-100 {
+    display: block;
+    width: 100%;
+}
+
+/* Specific styles */
+#section-form {
+    max-width: 50%;
+    margin: 0 auto;
+    /* padding: 20px 50px; */
+    background-color: #1e3d59;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#title-container {
+    background-color: #ff6e40;
+    padding: 50px;
+    color: #f5f0e1;
+}
+
+#title {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+}
+
+#description {
+    font-size: 1.2rem;
+}
+
+#form-wrapper {
+    padding: 0 50px;
+    padding-bottom: 30px;
+}
+
+#form-group-remarks {
+    margin-top: 0;
+}
+
+#half-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+    #half-container div {
+        width: 50%;
+    }
+
+    #half-container div input{
+        width: 95%;
+    }
+
+    #half-container div select {
+        width: 100%;
+    }
+
+#submitButton {
+    padding: 20px;
+    width: 100%;
+    background-color: #ff6e40;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #f5f0e1;
+    cursor: pointer;
+}   
+
+    #submitButton:hover {
+        filter: brightness(150%);
+    }
+
+/* Custom radio button */
+.container-radio,
+.container-checkbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container-radio {
+    margin-right: 10px;
+}
+
+.container-checkbox {
+    display: block;
+}
+    
+    /* Hide the browser's default radio button */
+    .container-radio input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    /* Hide the browser's default checkbox */
+    .container-checkbox input  {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    
+    /* Create a custom radio button */
+    .checkmark-radio {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark-checkbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+    }
+    
+    /* On mouse-over, add a grey background color */
+    .container-radio:hover input ~ .checkmark-radio,
+    .container-checkbox:hover input ~ .checkmark-checkbox {
+        background-color: #ccc;
+    }
+    
+    /* When the radio button is checked, add a blue background */
+    .container-radio input:checked ~ .checkmark-radio,
+    .container-checkbox input:checked ~ .checkmark-checkbox {
+        background-color: #ff6e40;
+    }
+    
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark-radio:after,
+    .checkmark-checkbox:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+    
+    /* Show the indicator (dot/circle) when checked */
+    .container-radio input:checked ~ .checkmark-radio:after,
+    .container-checkbox input:checked ~ .checkmark-checkbox:after {
+        display: block;
+    }
+    
+    /* Style the indicator (dot/circle) */
+    .container-radio .checkmark-radio:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+
+    /* Style the checkmark/indicator */
+    .container-checkbox .checkmark-checkbox:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+/* Media Queries */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    main {
+        padding: 0px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {
+    main {
+        padding: 0px;
+    }
+} */
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {
+    main {
+        padding: 50px;
+    }
+
+    #section-form {
+        
+    }
+} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {
+    
+} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {
+     main {
+        padding: 50px;
+    } 
+} */

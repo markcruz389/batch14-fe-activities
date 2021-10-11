@@ -1,0 +1,8 @@
+@use '../utilities' as u;
+
+body {
+    font-family: u.$font-stack;
+    color: u.$text-primary;
+    font-weight: u.$font-normal;
+    background-color: u.$color-tertiary;
+}

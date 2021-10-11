@@ -1,0 +1,9 @@
+@use '../utilities' as u;
+
+form {
+    @include u.padding(40px, 40px, 40px, 40px);
+}
+
+.form-control {
+    @include u.padding(5px, null, 5px, null);
+}

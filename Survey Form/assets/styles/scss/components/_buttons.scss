@@ -1,0 +1,29 @@
+// This contains all button related styles
+
+@use '../utilities' as u;
+
+button, .button {
+    @include u.padding(3px, 5px, 3px, 5px);
+
+    &.button-secondary {
+        background-color: u.$color-secondary;
+        border: 1px solid u.$color-secondary;
+        color: u.$text-secondary;
+    }
+
+    &.button-lg {
+        @include u.padding(10px, 20px, 10px, 20px);
+    }
+
+    &.button-fw {
+        display: block;
+        width: 100%;
+    }
+
+    &:hover {
+        border: 1px solid u.$color-tertiary;
+        background-color: u.$color-tertiary;
+        color: u.$color-primary;
+        cursor: pointer;
+    }
+}

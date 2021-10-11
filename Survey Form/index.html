@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/styles/css/main.css">
+    <title>Survey Form</title>
+</head>
+<body>
+    <main>
+        <section id="section-form">
+            <div id="title-container">
+                <h1 id="title">Survey for Survey Form</h1>
+                <p id="description">
+                    I want to know what you think about this survey form.
+                </p>
+            </div>
+
+            <div id="form-wrapper">
+                <form action="" method="post" id="survey-form">
+                    <div class="form-control">
+                        <label for="name" id="name-label" class="input-label label-md">Name</label>
+                        <input type="text" id="name" class="input input-fw input-lg" name="name" placeholder="Input your Full name" required>
+                    </div>
+                    
+                    <div class="form-control">
+                        <label for="email" id="email-label" class="input-label label-md">Email</label>
+                        <input type="email" id="email" class="input input-fw input-lg" name="email" placeholder="Input your Email Address" required>
+                    </div>
+
+                    <div id="half-container" class="two-columns">
+                        <div>
+                            <label for="number" id="age-label" class="input-label label-md">Age</label>
+                            <input type="number" id="number" class="input input-fw input-lg" name="age" placeholder="Input your Age" min="18" max="100" required>
+                        </div>
+
+                        <div>
+                            <label for="dropdown" class="input-label label-md">Country</label>
+                            <select name="" class="select select-fw select-lg" id="dropdown" required>
+                                <option value="" selected disabled hidden>Select Country</option>
+                                <option value="philippines">Philippines</option>
+                                <option value="usa">USA</option>
+                                <option value="china">China</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="half-container" class="two-columns">
+                        <div class="form-control">
+                            <p class="input-label label-md">Gender</p>  
+                            <label class="container-radio">Male
+                                <input type="radio" checked="checked" name="gender">
+                                <span class="checkmark-radio"></span>
+                            </label>
+                            <label class="container-radio">Female
+                                <input type="radio" name="gender">
+                                <span class="checkmark-radio"></span>
+                            </label>
+                        </div>
+
+                        <div class="form-control" class="two-columns">
+                            <p class="input-label label-md">Which of the following words would you use to describe this survey form?</p>  
+                            <label class="container-checkbox">High Quality
+                                <input type="checkbox" checked="checked" value="high quality">
+                                <span class="checkmark-checkbox"></span>
+                            </label>
+                            <label class="container-checkbox">Good Design
+                                <input type="checkbox" value="good design">
+                                <span class="checkmark-checkbox"></span>
+                            </label>
+                            <!-- <label class="container-checkbox">Well Built
+                                <input type="checkbox" value="well built">
+                                <span class="checkmark-checkbox"></span>
+                            </label> -->
+                            <label class="container-checkbox">Poor Quality
+                                <input type="checkbox" value="poor quality">
+                                <span class="checkmark-checkbox"></span>
+                            </label>
+                        </div>
+                    </div>
+                 
+                    <div id="form-group-remarks" class="form-group">
+                        <label for="comments" class="input-label">Comments</label>
+                        <textarea id="comments" name="comments" class="textarea-fw" id="" cols="30" rows="3"></textarea>
+                    </div>
+                    
+                    <div id="submitBtnContainer">
+                        <input class="button button-secondary button-lg button-fw" type="submit" id="submitButton">
+                    </div>
+                    
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created by: Mark Anthony Cruz &copy;2021</p>
+    </footer>
+</body>
+</html>

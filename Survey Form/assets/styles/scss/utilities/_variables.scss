@@ -1,0 +1,38 @@
+// This contains all the Sass variables
+
+//--> COLORS
+$black: #000;
+$white: #fff;
+$royal-orange: #ff6e40;
+$dark-blue: #1e3d59;
+$beige: #f5f0e1;
+
+// Color Scheme/Palette
+$color-primary: $dark-blue;
+$color-secondary: $royal-orange;
+$color-tertiary: $beige;
+
+//--> FONTS
+
+// Font imports
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+//Font family
+$font-stack: 'Roboto', sans-serif;
+
+// Font sizes
+$heading-large: 2.5rem;
+$heading-medium: 1.75rem; 
+$font-small: .75rem;
+$font-medium: 1.3rem;
+$font-large: 1.75rem;
+
+// Font-colors
+$text-primary: $black;
+$text-secondary: $beige;
+
+// Font weight
+$font-normal: 400;
+$font-bold: 600;
+
+

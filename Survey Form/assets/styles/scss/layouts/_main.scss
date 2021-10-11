@@ -1,0 +1,7 @@
+@use '../utilities' as u;
+
+main {
+    @include u.padding(50px, 200px, 50px, 200px);
+    @extend %flex-center;
+    height: calc(100vh - 50px);
+}

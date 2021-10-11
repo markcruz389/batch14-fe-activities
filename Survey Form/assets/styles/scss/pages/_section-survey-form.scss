@@ -1,0 +1,21 @@
+@use '../utilities' as u;
+
+#section-form {
+    background-color: u.$color-primary;
+    color: u.$text-secondary;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    max-width: 700px 
+}
+
+#title-container {
+    @include u.padding(20px, 20px, 20px, 20px);
+    background-color: u.$color-secondary;
+    text-align: center;
+}
+
+#submitBtnContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
