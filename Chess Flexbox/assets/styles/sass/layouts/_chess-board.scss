@@ -16,7 +16,7 @@
         }
 
         &--bottom { 
-            bottom: -0.5vmin;
+            bottom: -0.3vmin;
             left: 5vmin;
         }
     }
@@ -24,7 +24,6 @@
     &__label {
         @extend %flex-center;
         font-size: 2vmin;
-        color: grey;
        
         &--left {
             height: 7.5vmin;

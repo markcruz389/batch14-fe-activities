@@ -285,12 +285,11 @@ body {
   top: 5vmin;
 }
 .outer-board__content--bottom {
-  bottom: -0.5vmin;
+  bottom: -0.3vmin;
   left: 5vmin;
 }
 .outer-board__label {
   font-size: 2vmin;
-  color: grey;
 }
 .outer-board__label--left {
   height: 7.5vmin;
