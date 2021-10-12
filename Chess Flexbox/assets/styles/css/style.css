@@ -72,7 +72,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
-.outer-board__label, .chess-board__cell {
+footer, .outer-board__label, .chess-board__cell {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -404,6 +404,13 @@ body {
   animation: move-8 1s;
   animation-fill-mode: forwards;
   animation-delay: 7s;
+}
+
+footer p {
+  color: #fff;
+  position: absolute;
+  bottom: 3vmin;
+  font-size: 2vmin;
 }
 
 /*# sourceMappingURL=style.css.map */

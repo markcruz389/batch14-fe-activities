@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+footer {
+    @extend %flex-center;
+
+    & p {
+        color: $white;
+        position: absolute;
+        bottom: 3vmin;
+        font-size: 2vmin;
+    }
+    
+}
