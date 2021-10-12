@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap");
 /* Box sizing rules */
 *,
 *::before,
@@ -98,6 +99,10 @@ body {
   min-width: 100vw;
   overflow: hidden;
   background-color: #1B2B32;
+}
+
+body {
+  font-family: "Cinzel", serif;
 }
 
 /* KEYFRAMES */
@@ -356,61 +361,70 @@ body {
 .chess-board__cell:nth-child(53) .chess-board__piece {
   animation: move-1 1s;
   animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
 }
 
 .chess-board__cell:nth-child(13) .chess-board__piece {
   animation: move-2 1s;
   animation-fill-mode: forwards;
   animation-delay: 1s;
+  animation-timing-function: ease-in-out;
 }
 
 .chess-board__cell:nth-child(63) .chess-board__piece {
   animation: move-3 1s;
   animation-fill-mode: forwards;
   animation-delay: 2s;
+  animation-timing-function: ease-in-out;
 }
 
 .chess-board__cell:nth-child(2) .chess-board__piece {
   animation: move-4 10s;
   animation-fill-mode: forwards;
   animation-delay: 3s;
+  animation-timing-function: ease-in-out;
 }
 
 .chess-board__cell:nth-child(62) .chess-board__piece {
   animation: move-5 10s;
   animation-fill-mode: forwards;
   animation-delay: 4s;
+  animation-timing-function: ease-in-out;
 }
 
 .chess-board__cell:nth-child(7) .chess-board__piece {
   animation: move-6 10s;
   animation-fill-mode: forwards;
   animation-delay: 5s;
+  animation-timing-function: ease-in-out;
 }
 
 .chess-board__cell:nth-child(64) .chess-board__piece {
   animation: move-7-1 1s;
   animation-fill-mode: forwards;
   animation-delay: 6s;
+  animation-timing-function: ease-in-out;
 }
 
 .chess-board__cell:nth-child(61) .chess-board__piece {
   animation: move-7-2 1s;
   animation-fill-mode: forwards;
   animation-delay: 6s;
+  animation-timing-function: ease-in-out;
 }
 
 .chess-board__cell:nth-child(9) .chess-board__piece {
   animation: move-8 1s;
   animation-fill-mode: forwards;
   animation-delay: 7s;
+  animation-timing-function: ease-in-out;
 }
 
 footer p {
   color: #fff;
   position: absolute;
   bottom: 3vmin;
-  font-size: 2vmin;
+  font-size: 1.5vmin;
 }
 
 /*# sourceMappingURL=style.css.map */
