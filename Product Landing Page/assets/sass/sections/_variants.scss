@@ -1,0 +1,102 @@
+@use '../abstracts' as *;
+
+#variants {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5rem 10rem;
+    padding-top: 10rem;
+    background-color: #e3e3e3;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+
+    .section-title {
+        h1 {
+            color: $primary-color;
+        }
+    }
+
+    .btn {
+        margin-top: 5rem;
+
+        &:hover {
+            color: $white;
+            border: 2px solid $primary-color;
+            background-color: $primary-color;
+        }
+
+        @include phone {            
+            margin-top: 1rem;
+        }
+    }
+
+    figure {
+        text-align: center;
+
+        img {
+            margin: auto;
+            transition: transform .2s; 
+
+            &:hover {
+                animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+                transform: translate3d(0, 0, 0);
+                backface-visibility: hidden;
+                perspective: 1000px;
+            }
+
+            &:hover + .hide {
+                opacity: 1;
+            }
+        }
+
+        figcaption {
+            margin-top: 2rem;
+            font-size: 2rem;
+            color: $primary-color;
+            font-weight: bold;
+            transition: all 500ms ease-in-out;
+
+            &.hide {
+                opacity: 0;
+            }
+        }
+
+        &:nth-child(3) {
+            @include phone {
+                order: 2;
+            }
+        }
+
+        @include phone {            
+            width: 50%;
+        }
+
+        @include tablet {
+            width: 33%;
+        }
+    }
+
+    @include phone {            
+        padding: 2rem;
+    }
+}
+
+.variants-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
+
+    @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+        flex-wrap: wrap;
+    }
+}
+
+.bg-img-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: rotateY(180deg);
+    z-index: -1;
+    opacity: .2;
+}
+

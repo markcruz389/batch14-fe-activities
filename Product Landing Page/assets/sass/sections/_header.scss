@@ -1,0 +1,257 @@
+@use '../abstracts' as *;
+
+#header {
+    height: 100vh;
+
+    @include phone {
+        height: auto;
+    }
+}
+
+#hero {
+    height: inherit;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "left right";
+
+    & .left {
+        grid-area: left;
+        height: inherit;
+        padding: 5rem 10rem;
+        background: url('../img/beer-background_05.jpg');   
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        &__content {
+            color: $primary-color;
+            text-transform: uppercase;
+            writing-mode: vertical-lr;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        &__line {
+            margin-top: 20px;
+            margin-left: 1rem;
+            height: 75px;
+            border-left: 3px solid $primary-color;
+        }
+
+        @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+            display: none;
+        }
+
+        @include desktop {
+            display: flex;
+        }
+    }
+
+    & .right {
+        @include flex(center, flex-end);
+        flex-direction: column;
+        grid-area: right;
+        height: inherit;
+        padding: 5rem 10rem;
+        padding-left: 5rem;
+        background-color: $primary-color;
+        background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+        color: $white;
+
+        &__img__container {
+            @include flex(center, center);
+            align-self: stretch;
+            justify-self: end;
+            
+            @include phone {
+                margin-top: auto;
+                height: 50%;
+            }
+
+            @include tablet {
+                margin-top: auto;
+                height: 55%;
+            }
+
+            @include breakpoint-min (map-get($breakpoints, "desktop")) {
+                display: none;
+            }
+
+        }
+
+        &__img {
+            height: 100%;
+        }
+
+        @include phone {
+            padding: 2rem;
+            padding-top: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @include tablet {
+            padding: 5rem 10rem;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+            display: none;
+        }
+
+        @include desktop {
+            display: block;
+            height: 65%;
+        }
+
+        @include LGdesktop {
+            height: 70%;
+        }
+    }
+
+    @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+        grid-template-columns: 1fr;
+    }
+
+    @include phone {
+    }
+
+    @include tablet {
+    }
+
+    @include desktop {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include LGdesktop {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.hero-message {
+    margin-top: auto;
+
+    &__top {
+        font-size: 2rem;   
+
+        @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+            text-align: center;
+        }
+
+        @include phone {
+            padding-left: 0;
+            font-size: 1.3rem;
+        }
+    
+        @include breakpoint-min (map-get($breakpoints, "desktop")) {
+            padding-left: 30%; 
+            text-align: left;
+        }
+    }
+
+    &__tagline {
+        color: $secondary-color;
+        font-family: groOved;
+        text-align: right;
+        font-size: 8rem;
+
+        @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+            text-align: center;
+        }
+
+        @include phone {
+            font-size: 5rem;
+        }
+    
+        @include tablet {
+            font-size: 8rem;
+        }
+
+        @include LGdesktop {
+            font-size: 11rem;
+        }
+    }
+
+    &__description {
+        font-size: 1.5rem;
+        line-height: 2;
+        letter-spacing: 2px;
+
+        @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+            text-align: center;
+        }
+
+        @include phone {
+            padding-left: 0;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        @include breakpoint-min (map-get($breakpoints, "desktop")) {
+            padding-left: 30%; 
+            text-align: left;
+        }
+    }
+
+    @include phone {
+        margin-top: 0;
+    }
+}
+
+.hero-socmed {
+    margin-top: auto;
+    width: 100%;
+
+    &__line {
+        padding-left: 30%;
+
+        hr {
+            width: 30%;
+
+            @include breakpoint-min (map-get($breakpoints, "desktop")) {
+                display: inline-block;
+            }
+
+            @include LGdesktop {
+                width: 43%;
+            }
+        }
+
+        @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+            display: none;
+        }
+    }
+    
+    p {
+        margin: 0 20px;
+        display: inline-block;
+        text-transform: uppercase;
+
+        @include phone {
+            display: none;
+        }
+    }
+
+    &__icons i {
+        margin: 0 5px;
+        color: $secondary-color;
+    }
+
+    @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+        text-align: center;
+    }
+}
+
+
+
+

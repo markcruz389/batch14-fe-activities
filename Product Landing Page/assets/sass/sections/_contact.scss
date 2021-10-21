@@ -1,0 +1,80 @@
+@use '../abstracts' as *;
+
+#contact {
+    padding: 5rem 10rem;
+    color: $white;
+    background-color: $primary-color;
+    background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+
+    @include phone {
+        padding: 2rem;
+    }
+
+    .section-title h1 {
+        color: $secondary-color;
+
+        @include phone {
+            font-size: 2rem;
+        }
+    }
+}
+
+.contact-wrapper {
+    display: flex;
+    margin-top: 5rem;
+    
+    @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+        flex-direction: column;
+    }
+}
+
+.form-container {
+    flex: 50;
+    padding: 0 5rem;
+
+    .form-group:last-child {
+        text-align: end;
+    }
+
+    .btn {
+        background-color: $secondary-color;
+        border: 0;
+        color: $primary-color;
+
+        &:hover {
+            background-color: grey;
+        }
+
+        @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+            width: 100%;
+        } 
+    }
+
+    @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+        margin-top: 5rem;
+        padding: 0;
+    } 
+}
+
+.address-container {
+    flex: 50;
+    padding: 0 5rem;
+
+    @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+        padding: 0;
+    } 
+}
+
+figcaption {
+
+    h3 {
+        @include phone {
+            font-size: 2rem;
+        }
+    }
+
+    @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
+        text-align: center;
+    } 
+}
+

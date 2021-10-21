@@ -1,0 +1,93 @@
+@use '../abstracts' as *;
+
+#media {
+    padding: 5rem 10rem;
+    background-image: url("../img/railway.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    
+    .section-title {
+        h1 {
+            color: $primary-color;
+        }
+    }
+
+    @include phone {
+        padding: 2rem;
+    }
+}
+
+.media {
+    &__wrapper {
+        @include flex (center, center);
+        flex-direction: column;
+        margin-top: 5rem;
+    }
+
+    &__video {
+        @include flex (center, center);
+        margin-top: 5rem;
+        height: 100%;
+
+        iframe {
+            border: 1px solid $white;
+            
+            @include phone {
+                width: 100%;
+            }
+        }
+    }
+
+    &__img {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 150px);
+        grid-gap: 5px;
+        grid-template-areas: 
+            "img_01 img_01 img_02 img_02"
+            "img_01 img_01 img_02 img_02"
+            "img_03 img_03 img_02 img_02"
+            "img_03 img_03 img_04 img_05";
+
+        .fig-01 {
+            grid-area: img_01;
+        }
+
+        .fig-02 {
+            grid-area: img_02;
+        }
+
+        .fig-03 {
+            grid-area: img_03;
+        }
+
+        .fig-04 {
+            grid-area: img_04;
+        }
+
+        .fig-05 {
+            grid-area: img_05;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border: 1px solid $white;
+            transition: transform .7s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                // transform: rotate(360deg);
+                // transform: skew(-0.06turn, 18deg);
+                transform: scale(1.2);
+            }
+        }
+
+        @include phone {
+            display: flex;
+            flex-direction: column;;
+        }
+    }
+}
+
