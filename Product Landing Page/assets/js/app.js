@@ -31,8 +31,8 @@ const navSlide = () => {
             console.log(link.style.animation);
         });
         
-        //Burger animation
-        // burger.classList.toggle('toggle');
+        // Burger animation
+        burger.classList.toggle('toggle');
     });
 
 }

@@ -158,7 +158,6 @@ h4 {
 
 .nav-active {
   background-color: #7E0C14;
-  box-shadow: 5px -1px 12px -5px grey;
 }
 
 #navbar {
@@ -243,6 +242,7 @@ h4 {
   height: 3px;
   background-color: #fff;
   margin: 5px;
+  transition: all 0.3s ease;
 }
 @media (min-width: 360px) and (max-width: 1365px) {
   .burger {
@@ -252,6 +252,18 @@ h4 {
 
 .nav-active {
   transform: translateX(0%);
+}
+
+.toggle .burger__line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .burger__line2 {
+  opacity: 0;
+}
+
+.toggle .burger__line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 .btn {

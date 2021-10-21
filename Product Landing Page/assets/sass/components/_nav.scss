@@ -2,7 +2,7 @@
 
 .nav-active {
     background-color:$primary-color;
-    box-shadow: 5px -1px 12px -5px grey;
+    // box-shadow: 5px -1px 12px -5px grey;
 }
 
 #navbar {
@@ -84,6 +84,7 @@
         height: 3px;
         background-color: $white;
         margin: 5px;
+        transition: all 0.3s ease;
     }
 
     @include breakpoint-between (map-get($breakpoints, "phone"), map-get($breakpoints, "desktop") - 1) {
@@ -91,7 +92,20 @@
     }
 }
 
+// responsive navigation
 .nav-active {
     transform: translateX(0%);
+}
+
+.toggle .burger__line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .burger__line2 {
+    opacity: 0;
+}
+
+.toggle .burger__line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
