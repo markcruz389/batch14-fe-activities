@@ -1,0 +1,127 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.remove {
+  display: none;
+}
+
+.hw {
+  width: 50%;
+}
+
+.fw {
+  width: 100%;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.7;
+  color: #f5f5f5;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+main {
+  height: 100vh;
+  background-image: url("https://picsum.photos/1920/1080");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  color: #f5f5f5;
+}
+
+.momentum {
+  display: flex;
+  justify-content: center;
+}
+.momentum__center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.bottom .quote-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 40rem;
+}
+
+.todo-box .todo-list {
+  color: #000;
+  padding: 0 20px;
+}
+.todo-box .todo-list li {
+  display: flex;
+  justify-content: space-between;
+}
+.todo-box .tooltip {
+  padding: 5rem;
+  width: 300px;
+  min-height: 100px;
+  background-color: #fff;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  right: 20px;
+  bottom: 50px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.todo-box .tooltip span::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #fff;
+  right: 10px;
+  bottom: -6px;
+}
+
+/*# sourceMappingURL=main.css.map */
