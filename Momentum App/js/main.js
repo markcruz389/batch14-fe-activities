@@ -22,11 +22,13 @@ const clearCenterContent = () => {
 const askName = () => { 
     //  Create elements
     const h1 = document.createElement('h1');
+    h1.classList.add('font-medium');
     h1.innerText = 'Hello, What is your name?';
 
     const input = document.createElement('input');
     input.type = 'text';
     input.classList.add('name');
+    input.classList.add('fw');
     
     centerContent.append(h1);
     centerContent.append(input);
@@ -49,6 +51,7 @@ const askMainFocus = () => {
 
     const input = document.createElement('input');
     input.classList.add('focus');
+    input.classList.add('fw')
     input.type = 'text';
 
     centerContent.append(h2);
@@ -58,6 +61,10 @@ const askMainFocus = () => {
     input.addEventListener('keypress', (e) => {
         if (e.key === 'Enter' && input.value.length !== 0 ) {
             saveData('mainFocus', input.value);
+
+            e.target.remove();
+            h2.remove();
+            showMainFocus(input.value);
         }
     });
 }
@@ -78,6 +85,7 @@ const showGreeting = (name) => {
     let greeting = `Good ${hour < 17 ? 'morning' : 'evening'}, ${name}`;
     const h2 = document.createElement('h2');
     h2.classList.add('greeting');
+    h2.classList.add('font-large')
     h2.innerText = greeting;
 
     centerContent.append(h2);
@@ -88,8 +96,14 @@ const showMainFocus = (mainFocus) => {
     const p1 = document.createElement('p');
     const p2 = document.createElement('p');
 
-    p1.textContent = "today";
+    div.classList.add('text-center')
+
+    p1.textContent = "Today";
+    p1.classList.add('font-large');
+
     p2.textContent = mainFocus;
+    p2.classList.add('font-large');
+
 
     div.append(p1);
     div.append(p2);
@@ -98,12 +112,11 @@ const showMainFocus = (mainFocus) => {
 
 const showQuote = () => {
     const quote = document.querySelector('p.quote');
+    quote.classList.add('font-medium');
 
     // Get random qoute
     var n = Math.floor(Math.random() * (quotes.length - 0) + 0);
     quote.textContent = quotes[n].quote;
-
-    // console.log(quotes[n].quote);
 }
 
 const showMainContent = (name) => {
@@ -137,10 +150,15 @@ const showTodoBtn = () => {
 
     const input = document.querySelector('.todo');
     input.classList.add('hidden');
+    input.classList.add('text-grey');
+    input.classList.add('ml--1');
 
     const btn = document.createElement('button');
     btn.classList.add('todo-btn');
     btn.classList.add('hw');
+    btn.classList.add('btn');
+    btn.classList.add('btn--primary');
+    btn.classList.add('btn--rounded');
     btn.textContent = 'New Todo';
 
     parentDiv.insertBefore(btn, input);
@@ -170,6 +188,10 @@ const getCurrentTime = () => {
 }
 
 const loadTodos = () => {
+    // Unhide todo box
+    const todoBox = document.querySelector('div.todo-box');
+    todoBox.classList.remove('hidden');
+
     const todoList = JSON.parse(getData('todoList'));
 
     if (todoList === null || todoList.length === 0) {
@@ -281,7 +303,6 @@ const addTodo = (todo) => {
     });
 
     deleteBtn.addEventListener('click', (e) => {
-        console.log('test');
         deleteTodo(e.target.id);
     });
 }
@@ -300,7 +321,7 @@ const addQuote = (quoteVal) => {
     quotes.push(quote);
 
     // Save quote object
-    saveData('quotes', JSON.stringify(quote));
+    saveData('quotes', JSON.stringify(quote)); 
 
     quoteInput.value = '';
     qouteEl.textContent = quoteVal;

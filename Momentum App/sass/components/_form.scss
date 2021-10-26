@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+input[type=text] {
+    border: 0;
+    border-bottom: 1px solid $color-white;
+    background: none;
+    caret-color: $color-white;
+    color: $color-white ;
+    
+    &:focus {
+        outline: none;
+    }
+}

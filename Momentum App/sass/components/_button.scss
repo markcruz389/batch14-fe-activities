@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.btn {
+    border: none;
+    padding: 1rem 2rem;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($color-primary, 3);
+    }
+
+    &--primary {
+        background-color: $color-primary;
+    }
+
+    &--rounded {
+        border-radius: 50px;
+    }
+}
