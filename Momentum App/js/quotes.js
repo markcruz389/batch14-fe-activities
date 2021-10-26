@@ -1,50 +1,26 @@
 const quotes = [
     {
-        "quote": "Be yourself; everyone else is already taken.",
-        "author": "Oscar Wilde"
+        "id": 0,
+        "quote": "Be yourself; everyone else is already taken."
     },
     {
-        "quote": "To live is the rarest thing in the world. Most people exist, that is all.",
-        "author": "Oscar Wilde"
+        "id": 1,
+        "quote": "To live is the rarest thing in the world. Most people exist, that is all."
     },
     {
-        "quote": "True friends stab you in the front.",
-        "author": "Oscar Wilde"
+        "id": 2,
+        "quote": "True friends stab you in the front."
     },
     {
-        "quote": "Women are made to be Loved, not understood.",
-        "author": "Oscar Wilde"
+        "id": 3,
+        "quote": "Women are made to be Loved, not understood."
     },
     {
-        "quote": "Be the change that you wish to see in the world.",
-        "author": "Mahatma Gandhi"
+        "id": 4,
+        "quote": "Be the change that you wish to see in the world."
     },
     {
-        "quote": "Live as if you were to die tomorrow. Learn as if you were to live forever.",
-        "author": "Mahatma Gandhi"
-    },
-    {
-        "quote": "No one can make you feel inferior without your consent.",
-        "author": "Eleanor Roosevelt"
-    },
-    {
-        "quote": "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
-        "author": "Eleanor Roosevelt"
-    },
-    {
-        "quote": "Do what you feel in your heart to be right - for you'll be criticized anyway.",
-        "author": "Eleanor Roosevelt"
-    },
-    {
-        "quote": "Do one thing every day that scares you.",
-        "author": "Eleanor Roosevelt"
-    },
-    {
-        "quote": "Darkness cannot drive out darkness: only light can do that. Hate cannot drive out hate; only love can do that.",
-        "author": "Martin Luther King"
-    },
-    {
-        "quote": "Our lives begin to end the day we become silent about things that matter.",
-        "author": "Martin Luther King"
+        "id": 5,
+        "quote": "Live as if you were to die tomorrow. Learn as if you were to live forever."
     }
 ]

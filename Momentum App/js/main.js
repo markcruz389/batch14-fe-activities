@@ -244,7 +244,7 @@ const deleteTodo = (id) => {
     }
 }
 
-const addTodo= (todo) => {
+const addTodo = (todo) => {
     const OlTodo = document.querySelector('.todo-list');
 
     const div = document.createElement('div');
@@ -286,6 +286,32 @@ const addTodo= (todo) => {
     });
 }
 
+const addQuote = (quoteVal) => {
+    const qouteEl = document.querySelector('p.quote');
+    const quoteInput = document.querySelector('.add-quote');
+
+    let quotes = JSON.parse(getData('quotes'));
+
+    // Create quote and push object
+    const quote = {
+        id: quotes.length + 1,
+        quote: quoteVal
+    };
+    quotes.push(quote);
+
+    // Save quote object
+    saveData('quotes', JSON.stringify(quote));
+
+    quoteInput.value = '';
+    qouteEl.textContent = quoteVal;
+}
+
+// initialize qoutes object
+if (!getData('qoutes')) {
+    saveData('quotes', JSON.stringify(quotes));
+}
+
+// Check if a name is saved
 if (!getData('name')) {
     // Ask and save user's name
     askName();
@@ -294,6 +320,7 @@ else {
     showMainContent(getData('name'));
 }
 
+// Show/Hide todo tooltip
 const todoBtn = document.querySelector('.todoLabel');
 todoBtn.addEventListener('click', () => {
     const tooltip = document.querySelector('.tooltip');
@@ -301,6 +328,7 @@ todoBtn.addEventListener('click', () => {
     tooltip.classList.toggle('hidden');
 })
 
+// Todo input event handlers
 const todoInput = document.querySelector('.todo');
 todoInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter' && todoInput.value.length !== 0 ) {
@@ -352,15 +380,23 @@ todoInput.addEventListener('focusout', (e) => {
 });
 
 // show qoute input on hover
-const quote = document.querySelector('.quote-block');
-quote.addEventListener('mouseover', (e) => {
+const quoteBlock = document.querySelector('.quote-block');
+quoteBlock.addEventListener('mouseover', (e) => {
     const inputQuote = document.querySelector('.add-quote');
     inputQuote.classList.remove('hidden');
 });
 
-quote.addEventListener('mouseleave', (e) => {
+quoteBlock.addEventListener('mouseleave', (e) => {
     const inputQuote = document.querySelector('.add-quote');
     inputQuote.classList.add('hidden');
+});
+
+// Save qoute when keypress "Enter"
+const quoteInput = document.querySelector('.add-quote');
+quoteInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && quoteInput.value.length !== 0 ) {
+        addQuote(quoteInput.value);
+    }
 });
 
 // Updates time every 30 secs
