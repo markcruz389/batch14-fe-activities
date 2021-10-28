@@ -1,0 +1,90 @@
+.transition {
+    transition: all .2s;
+}
+
+.animation-delay-1 {
+    animation-delay: 1s;
+}
+
+.animate-move-in-right {
+    animation: moveInRight 1s ease-in-out;
+}
+
+.animate-move-in-left {
+    animation: moveInLeft 1s ease-in-out;
+}
+
+.animate-move-in-top {
+    animation: moveInTop 1s ease-in-out;
+    animation-delay: 1s;
+    animation-fill-mode: backwards;
+}
+
+.animate-move-in-bottom {
+    animation: moveInBottom 1s ease-in-out;
+    animation-delay: .5s;
+    animation-fill-mode: backwards;
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveInTop {
+    0% {
+        opacity: 0;
+        transform: translateY(-3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

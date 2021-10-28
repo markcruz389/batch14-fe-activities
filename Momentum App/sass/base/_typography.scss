@@ -17,6 +17,10 @@ h2 {
     font-size: 4rem;
 }
 
+.font-default {
+    font-size: 1.6rem;
+}
+
 .font-medium {
     font-size: 2.5rem;
 }
@@ -30,10 +34,22 @@ h2 {
 }
 
 .text-grey {
-    color: $color-grey !important;
+    color: $color-grey;
 }
 
 .text-black {
-    color: $color-black !important;
+    color: $color-black;
+}
+
+.text-white {
+    color: $color-white;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.text-cross-out {
+    text-decoration: line-through;
 }
 

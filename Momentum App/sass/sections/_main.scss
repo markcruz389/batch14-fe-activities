@@ -1,10 +1,11 @@
 @use '../abstracts' as *;
 main {
     height: 100vh;
-    background-image: url('https://picsum.photos/1920/1080');
+    background-image: url('../../img/bg_01.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: grey;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -29,6 +30,10 @@ main {
     }
 }
 
+.mainfocus-container:hover #check-box_1{
+    visibility: visible;
+}
+
 .bottom {
     display: flex;
     justify-content: space-between;
@@ -44,30 +49,56 @@ main {
             height: 5rem;
             text-align: center;
             font-size: 3rem;
+            color: $color-white;
         }
+    }
+
+    .todoLabel {
+        transition: all .2s;
+        animation: fadeIn 1s ease-in-out;
+        animation-delay: 1.5s;
+        animation-fill-mode: backwards;
     }
 }
 
 .todo-box {
     .todo-list {
         color: #000;
-        padding: 0 20px;
+        padding: 2rem 0;
 
         li {
             display: flex;
             justify-content: space-between;
+
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+
+            label {
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 1rem;
+                font-size: 1.6rem;
+                font-weight: bold;
+            }
+
+            input[type=checkbox] {
+                display: inline-block;
+                vertical-align: middle;
+                transform: scale(1.5);
+            }
         }
     }
 
     .tooltip {
         padding: 5rem;
-        width: 300px;
+        width: 35rem;
         min-height: 100px;
         background-color: #fff;
         color: #fff;
         text-align: center;
         border-radius: 6px;
-        padding: 5px 0;
+        padding: 1rem 2rem;
         box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
       
         /* Position the tooltip */
@@ -80,6 +111,25 @@ main {
         flex-direction: column;
         justify-content: space-between;
 
+        // animation
+        transition: all .2s;
+        animation: fadeIn 1s ease-in-out;
+        animation-delay: 2s;
+        animation-fill-mode: backwards;
+
+        @include tablet {
+            bottom: 60px;
+        }
+
+        @include phone {
+            bottom: 40px;
+            right: 10px;
+        }
+
+        input {
+            color: grey;
+        }
+
         span::after {
             content:'';
             display:block;
@@ -91,8 +141,15 @@ main {
             border-right: 10px solid transparent; 
             border-top:10px solid #fff;
             right:25px;
-            
             bottom:-6px;
+
+            @include tablet {
+                right: 15px;
+            }
+
+            @include phone {
+                right: 10px;
+            }
         }
     }
 }

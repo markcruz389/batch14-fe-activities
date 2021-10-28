@@ -22,13 +22,12 @@ const clearCenterContent = () => {
 const askName = () => { 
     //  Create elements
     const h1 = document.createElement('h1');
-    h1.classList.add('font-medium');
+    h1.classList.add('font-large', 'animate-move-in-right', 'transition');
     h1.innerText = 'Hello, What is your name?';
 
     const input = document.createElement('input');
     input.type = 'text';
-    input.classList.add('name');
-    input.classList.add('fw');
+    input.classList.add('name', 'fw', 'text-white', 'animate-move-in-bottom', 'transition');
     
     centerContent.append(h1);
     centerContent.append(input);
@@ -46,12 +45,11 @@ const askName = () => {
 const askMainFocus = () => {
     // Create elements
     const h2 = document.createElement('h2');
-    h2.classList.add('question');
+    h2.classList.add('question', 'animate-move-in-left', 'transition');
     h2.innerText = 'What is your main focus for today?'
 
     const input = document.createElement('input');
-    input.classList.add('focus');
-    input.classList.add('fw')
+    input.classList.add('focus', 'fw', 'text-white', 'animate-move-in-bottom', 'animation-delay-1', 'transition');
     input.type = 'text';
 
     centerContent.append(h2);
@@ -73,7 +71,7 @@ const showCurrentTime = () => {
     // Current time
     const h1 = document.createElement('h1');
     h1.innerText = getCurrentTime();
-    h1.classList.add('current-time');
+    h1.classList.add('current-time', 'animate-fade-in', 'transition');
   
     centerContent.append(h1);
 }
@@ -84,8 +82,7 @@ const showGreeting = (name) => {
 
     let greeting = `Good ${hour < 17 ? 'morning' : 'evening'}, ${name}`;
     const h2 = document.createElement('h2');
-    h2.classList.add('greeting');
-    h2.classList.add('font-large')
+    h2.classList.add('greeting', 'font-large', 'animate-move-in-right', 'transition');
     h2.innerText = greeting;
 
     centerContent.append(h2);
@@ -93,26 +90,59 @@ const showGreeting = (name) => {
 
 const showMainFocus = (mainFocus) => {
     const div = document.createElement('div');
+    div.classList.add( 'text-center')
+
     const p1 = document.createElement('p');
-    const p2 = document.createElement('p');
-
-    div.classList.add('text-center')
-
     p1.textContent = "Today";
-    p1.classList.add('font-large');
+    p1.classList.add('font-medium');
 
+    const p2 = document.createElement('p');
     p2.textContent = mainFocus;
-    p2.classList.add('font-large');
+    p2.classList.add('main-focus', 'font-large', 'font-bold', 'ml--1', 'mr--1');
 
+    const div2 = document.createElement('div');
+    div2.classList.add('mainfocus-container', 'flex-center', 'flex-row-reverse');
+
+    const checkbox = document.createElement('input');
+    checkbox.classList.add('hidden', 'main-focus__checkbox', 'checkbox--lg');
+    checkbox.type = 'checkbox';
+    checkbox.setAttribute("id", "check-box_1");
+    
+    const deleteBtn = document.createElement('a');    
+    deleteBtn.setAttribute("href", "#");
+    deleteBtn.setAttribute("id", "main-focus-delete");
+    deleteBtn.classList.add('hidden', 'btn', 'btn--error', 'btn--sm');
+    deleteBtn.textContent = 'x';
+
+    div2.append(deleteBtn);
+    div2.append(p2);
+    div2.append(checkbox);
 
     div.append(p1);
-    div.append(p2);
+    div.append(div2);
+
     centerContent.append(div);
+
+    checkbox.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            deleteBtn.classList.remove('hidden');
+            p2.classList.add('text-cross-out');
+        }
+        else {
+            deleteBtn.classList.add('hidden');
+            p2.classList.remove('text-cross-out');
+        }
+    });
+
+    deleteBtn.addEventListener('click', (e) => {
+        console.log('test');
+        deleteMainFocus(e.target.id);
+    });
 }
 
 const showQuote = () => {
     const quote = document.querySelector('p.quote');
-    quote.classList.add('font-medium');
+    quote.classList.add('font-medium', 'animate-move-in-top', 'transition');
 
     // Get random qoute
     var n = Math.floor(Math.random() * (quotes.length - 0) + 0);
@@ -141,34 +171,32 @@ const showTodoBtn = () => {
     const todoBtn = document.querySelector('.todo-btn');
 
     if (todoBtn) {
-        // todoBtn.style.display = 'none';
         todoBtn.remove();
     }
 
     const parentDiv = document.querySelector('.todo-list').parentElement;
     parentDiv.classList.add('flex-center');
 
+    const p = document.createElement('p');
+    p.textContent = "Add a todo to get started";
+    p.classList.add('font-default', 'text-grey', 'mb--2', 'font-bold');
+
     const input = document.querySelector('.todo');
-    input.classList.add('hidden');
-    input.classList.add('text-grey');
-    input.classList.add('ml--1');
+    input.classList.add('hidden', 'text-grey');
+    input.style.caretColor = '#000';
 
     const btn = document.createElement('button');
-    btn.classList.add('todo-btn');
-    btn.classList.add('hw');
-    btn.classList.add('btn');
-    btn.classList.add('btn--primary');
-    btn.classList.add('btn--rounded');
-    btn.textContent = 'New Todo';
+    btn.classList.add('todo-btn', 'hw', 'btn', 'btn--primary', 'btn--rounded', 'mb--2');
+    btn.textContent = 'New Todo \u002B';
 
     parentDiv.insertBefore(btn, input);
+    parentDiv.insertBefore(p, btn);
 
     btn.addEventListener('click', (e) => {
         input.classList.remove('hidden');
         input.focus();
-        // btn.classList.add('hidden');
-        // btn.style.display = 'none';
         btn.remove();
+        p.remove();
     });
 }
 
@@ -214,8 +242,7 @@ const loadTodos = () => {
             const deleteBtn = document.createElement('a');    
             deleteBtn.setAttribute("href", "#");
             deleteBtn.setAttribute("id", todoList[i].id);
-            deleteBtn.classList.add(`todo-delete_${todoList[i].id}`);
-            deleteBtn.classList.add('hidden');
+            deleteBtn.classList.add(`todo-delete_${todoList[i].id}`, 'hidden', 'btn', 'btn--error', 'btn--sm');
             deleteBtn.textContent = 'x'; 
 
             div.append(checkbox);
@@ -266,6 +293,15 @@ const deleteTodo = (id) => {
     }
 }
 
+const deleteMainFocus = () => {
+    const mainFocusDiv = document.querySelector('.mainfocus-container');
+    mainFocusDiv.parentElement.remove();
+
+    localStorage.removeItem('mainFocus');
+
+    askMainFocus();
+}
+
 const addTodo = (todo) => {
     const OlTodo = document.querySelector('.todo-list');
 
@@ -280,10 +316,9 @@ const addTodo = (todo) => {
     label.textContent = todo.todo;
 
     const deleteBtn = document.createElement('a');   
-    deleteBtn.classList.add('hidden');
-    deleteBtn.classList.add(`todo-delete_${todo.id}`);
-    deleteBtn.setAttribute("href", "#");
     deleteBtn.setAttribute("id", todo.id);
+    deleteBtn.setAttribute("href", "#"); 
+    deleteBtn.classList.add(`todo-delete_${todo.id}`, 'hidden', 'btn', 'btn--error', 'btn--sm');
     deleteBtn.textContent = 'x'; 
 
     div.append(checkbox);
@@ -319,7 +354,7 @@ const addQuote = (quoteVal) => {
         quote: quoteVal
     };
     quotes.push(quote);
-
+    console.log(quotes);
     // Save quote object
     saveData('quotes', JSON.stringify(quote)); 
 
@@ -327,8 +362,8 @@ const addQuote = (quoteVal) => {
     qouteEl.textContent = quoteVal;
 }
 
-// initialize qoutes object
-if (!getData('qoutes')) {
+// initialize qoutes array of object
+if (getData('qoutes')) {
     saveData('quotes', JSON.stringify(quotes));
 }
 
@@ -340,6 +375,8 @@ if (!getData('name')) {
 else {
     showMainContent(getData('name'));
 }
+
+//-- EVENT LISTERS
 
 // Show/Hide todo tooltip
 const todoBtn = document.querySelector('.todoLabel');
@@ -363,9 +400,17 @@ todoInput.addEventListener('keypress', (e) => {
         // save todolist in array
         let todoList = JSON.parse(getData('todoList'));
 
+        let todoId = 0;
+        // Get largest id 
+        for (let i = 0; i < todoList.length; i++) {
+            if (todoList[i].id >= todoId) {
+                todoId = todoList[i].id + 1;
+            }
+        }
+
         // Create todo object
         const todo = {
-            id: todoList.length,
+            id: todoId,
             todo: todoInput.value
         };
 
@@ -419,6 +464,8 @@ quoteInput.addEventListener('keypress', (e) => {
         addQuote(quoteInput.value);
     }
 });
+
+//-- INTERVALS
 
 // Updates time every 30 secs
 setInterval(function () {

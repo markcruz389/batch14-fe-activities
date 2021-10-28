@@ -5,9 +5,13 @@ input[type=text] {
     border-bottom: 1px solid $color-white;
     background: none;
     caret-color: $color-white;
-    color: $color-white ;
+    // color: $color-white ;
     
     &:focus {
         outline: none;
     }
+}
+
+.checkbox--lg {
+    transform: scale(1.5);
 }

@@ -10,6 +10,16 @@
 html {
   font-size: 62.5%;
 }
+@media (min-width: 768px) and (max-width: 1365px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  html {
+    font-size: 31.25%;
+  }
+}
 
 body {
   box-sizing: border-box;
@@ -46,8 +56,24 @@ a {
   align-items: center;
 }
 
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
 .ml--1 {
   margin-left: 1rem;
+}
+
+.mr--1 {
+  margin-right: 1rem;
+}
+
+.mb--1 {
+  margin-bottom: 1rem;
+}
+
+.mb--2 {
+  margin-bottom: 3rem;
 }
 
 body {
@@ -66,6 +92,10 @@ h2 {
   font-size: 4rem;
 }
 
+.font-default {
+  font-size: 1.6rem;
+}
+
 .font-medium {
   font-size: 2.5rem;
 }
@@ -79,19 +109,114 @@ h2 {
 }
 
 .text-grey {
-  color: #C0C0C0 !important;
+  color: #C0C0C0;
 }
 
 .text-black {
-  color: #000 !important;
+  color: #000;
 }
 
+.text-white {
+  color: #f5f5f5;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.text-cross-out {
+  text-decoration: line-through;
+}
+
+.transition {
+  transition: all 0.2s;
+}
+
+.animation-delay-1 {
+  animation-delay: 1s;
+}
+
+.animate-move-in-right {
+  animation: moveInRight 1s ease-in-out;
+}
+
+.animate-move-in-left {
+  animation: moveInLeft 1s ease-in-out;
+}
+
+.animate-move-in-top {
+  animation: moveInTop 1s ease-in-out;
+  animation-delay: 1s;
+  animation-fill-mode: backwards;
+}
+
+.animate-move-in-bottom {
+  animation: moveInBottom 1s ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .btn {
   border: none;
   padding: 1rem 2rem;
   color: white;
+  font-size: 1rem;
+  font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
+  border-radius: 2px;
 }
 .btn:hover {
   background-color: #2463ed;
@@ -99,8 +224,17 @@ h2 {
 .btn--primary {
   background-color: #326dee;
 }
+.btn--error {
+  background-color: red;
+}
+.btn--error:hover {
+  background-color: #f00000;
+}
 .btn--rounded {
   border-radius: 50px;
+}
+.btn--sm {
+  padding: 0.5rem 1rem;
 }
 
 input[type=text] {
@@ -108,18 +242,22 @@ input[type=text] {
   border-bottom: 1px solid #f5f5f5;
   background: none;
   caret-color: #f5f5f5;
-  color: #f5f5f5;
 }
 input[type=text]:focus {
   outline: none;
 }
 
+.checkbox--lg {
+  transform: scale(1.5);
+}
+
 main {
   height: 100vh;
-  background-image: url("https://picsum.photos/1920/1080");
+  background-image: url("../../img/bg_01.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: grey;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -142,6 +280,10 @@ main {
   font-size: 2.5rem;
 }
 
+.mainfocus-container:hover #check-box_1 {
+  visibility: visible;
+}
+
 .bottom {
   display: flex;
   justify-content: space-between;
@@ -157,25 +299,47 @@ main {
   height: 5rem;
   text-align: center;
   font-size: 3rem;
+  color: #f5f5f5;
+}
+.bottom .todoLabel {
+  transition: all 0.2s;
+  animation: fadeIn 1s ease-in-out;
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
 }
 
 .todo-box .todo-list {
   color: #000;
-  padding: 0 20px;
+  padding: 2rem 0;
 }
 .todo-box .todo-list li {
   display: flex;
   justify-content: space-between;
 }
+.todo-box .todo-list li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.todo-box .todo-list li label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.todo-box .todo-list li input[type=checkbox] {
+  display: inline-block;
+  vertical-align: middle;
+  transform: scale(1.5);
+}
 .todo-box .tooltip {
   padding: 5rem;
-  width: 300px;
+  width: 35rem;
   min-height: 100px;
   background-color: #fff;
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 1rem 2rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   /* Position the tooltip */
   position: absolute;
@@ -185,6 +349,24 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.2s;
+  animation: fadeIn 1s ease-in-out;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+}
+@media (min-width: 768px) and (max-width: 1365px) {
+  .todo-box .tooltip {
+    bottom: 60px;
+  }
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .todo-box .tooltip {
+    bottom: 40px;
+    right: 10px;
+  }
+}
+.todo-box .tooltip input {
+  color: grey;
 }
 .todo-box .tooltip span::after {
   content: "";
@@ -197,6 +379,16 @@ main {
   border-top: 10px solid #fff;
   right: 25px;
   bottom: -6px;
+}
+@media (min-width: 768px) and (max-width: 1365px) {
+  .todo-box .tooltip span::after {
+    right: 15px;
+  }
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .todo-box .tooltip span::after {
+    right: 10px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

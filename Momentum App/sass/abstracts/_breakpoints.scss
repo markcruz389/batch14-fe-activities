@@ -1,0 +1,53 @@
+$breakpoints: (
+    "phone": 360px,
+    "tablet": 768px,
+    "desktop": 1366px,
+    "LGdesktop": 1920px
+);
+
+@mixin phone {
+    @media (min-width: map-get($breakpoints, "phone")) and (max-width: map-get($breakpoints, "tablet") - 1) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: map-get($breakpoints, "tablet")) and (max-width: map-get($breakpoints, "desktop") - 1) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: map-get($breakpoints, "desktop")) and (max-width: map-get($breakpoints, "LGdesktop") - 1) {
+        @content;
+    }
+}
+
+@mixin LGdesktop {
+    @media (min-width: map-get($breakpoints, "LGdesktop")) {
+        @content;
+    }
+}
+
+// Custom breakpoints
+
+//Custom in between
+@mixin breakpoint-between ($bp1: 0, $bp2: 0) {
+    @media (min-width: $bp1) and (max-width: $bp2) {
+        @content;
+    }
+}
+
+// Custom less than or equal
+@mixin breakpoint-min ($bp1) {
+    @media (min-width: $bp1) {
+        @content;
+    }
+}
+
+// Custom moire than or equal
+@mixin breakpoint-max ($bp1) {
+    @media (max-width: $bp1) {
+        @content;
+    }
+}
