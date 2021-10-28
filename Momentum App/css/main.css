@@ -136,6 +136,10 @@ h2 {
   animation-delay: 1s;
 }
 
+.animation-delay-3 {
+  animation-delay: 3s !important;
+}
+
 .animate-move-in-right {
   animation: moveInRight 1s ease-in-out;
 }
