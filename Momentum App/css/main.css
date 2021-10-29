@@ -96,6 +96,10 @@ h2 {
   font-size: 1.6rem;
 }
 
+.font-default-px {
+  font-size: 16px;
+}
+
 .font-medium {
   font-size: 2.5rem;
 }
@@ -214,9 +218,9 @@ h2 {
 }
 .btn {
   border: none;
-  padding: 1rem 2rem;
+  padding: 10px 10px;
   color: white;
-  font-size: 1rem;
+  font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
@@ -361,12 +365,14 @@ main {
 @media (min-width: 768px) and (max-width: 1365px) {
   .todo-box .tooltip {
     bottom: 60px;
+    width: 300px;
   }
 }
 @media (min-width: 360px) and (max-width: 767px) {
   .todo-box .tooltip {
     bottom: 40px;
     right: 10px;
+    width: 300px;
   }
 }
 .todo-box .tooltip input {

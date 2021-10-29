@@ -119,11 +119,13 @@ main {
 
         @include tablet {
             bottom: 60px;
+            width: 300px;
         }
 
         @include phone {
             bottom: 40px;
             right: 10px;
+                width: 300px;
         }
 
         input {
