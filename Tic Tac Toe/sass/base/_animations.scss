@@ -1,0 +1,131 @@
+.a-rotatey-180 {
+  transform: rotateY(180deg);
+}
+
+.a-rotatey-rv-180 {
+  transform: rotateY(-180deg);
+}
+
+.a-rotatey-0 {
+  transform: rotateY(0) !important;
+}
+
+.a-fade-in {
+  animation: fadeIn 3s ease-in-out;
+}
+
+.a-pulsate-primary {
+  animation: pulsate-primary 0.11s ease-in-out infinite alternate;
+}
+
+.a-pulsate-secondary {
+  animation: pulsate-secondary 0.11s ease-in-out infinite alternate;
+}
+
+.a-pulsate-tertiary {
+  animation: pulsate-tertiary 0.11s ease-in-out infinite alternate;
+}
+
+.a-pulsate-winner {
+  animation: pulsate-winner 0.11s ease-in-out infinite alternate;
+}
+
+.a-pulsate-draw {
+  animation: pulsate-draw 0.11s ease-in-out infinite alternate;
+}
+
+// Animatin for neon lights text
+@keyframes pulsate-primary {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+      0 0 40px var(--color-primary), 0 0 80px var(--color-primary),
+      0 0 90px var(--color-primary), 0 0 100px var(--color-primary),
+      0 0 150px var(--color-primary);
+  }
+  0% {
+    /* A slightly smaller blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff,
+      0 0 38px var(--color-primary), 0 0 73px var(--color-primary),
+      0 0 80px var(--color-primary), 0 0 94px var(--color-primary),
+      0 0 140px var(--color-primary);
+  }
+}
+
+@keyframes pulsate-secondary {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+      0 0 40px var(--color-secondary), 0 0 80px var(--color-secondary),
+      0 0 90px var(--color-secondary), 0 0 100px var(--color-secondary),
+      0 0 150px var(--color-secondary);
+  }
+  0% {
+    /* A slightly smaller blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff,
+      0 0 38px var(--color-secondary), 0 0 73px var(--color-secondary),
+      0 0 80px var(--color-secondary), 0 0 94px var(--color-secondary),
+      0 0 140px var(--color-secondary);
+  }
+}
+
+@keyframes pulsate-tertiary {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+      0 0 40px var(--color-tertiary), 0 0 80px var(--color-tertiary),
+      0 0 90px var(--color-tertiary), 0 0 100px var(--color-tertiary),
+      0 0 150px var(--color-tertiary);
+  }
+  0% {
+    /* A slightly smaller blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 10px #fff, 0 0 18px #fff,
+      0 0 38px var(--color-tertiary), 0 0 73px var(--color-tertiary),
+      0 0 80px var(--color-tertiary), 0 0 94px var(--color-tertiary),
+      0 0 140px var(--color-tertiary);
+  }
+}
+
+@keyframes pulsate-winner {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+      0 0 40px var(--color-primary), 0 0 80px var(--color-primary),
+      0 0 90px var(--color-primary), 0 0 100px var(--color-primary),
+      0 0 150px var(--color-primary);
+  }
+  0% {
+    /* A slightly smaller blur radius */
+    text-shadow: 0 0 4px var(--color-tertiary), 0 0 10px var(--color-tertiary),
+      0 0 18px var(--color-tertiary), 0 0 38px var(--color-tertiary),
+      0 0 73px var(--color-tertiary), 0 0 80px var(--color-tertiary),
+      0 0 94px var(--color-tertiary), 0 0 140px var(--color-tertiary);
+  }
+}
+
+@keyframes pulsate-draw {
+  100% {
+    /* Larger blur radius */
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff,
+      0 0 40px var(--color-primary), 0 0 80px var(--color-primary),
+      0 0 90px var(--color-primary), 0 0 100px var(--color-primary),
+      0 0 150px var(--color-primary);
+  }
+  0% {
+    /* A slightly smaller blur radius */
+    text-shadow: 0 0 4px var(--color-secondary), 0 0 10px var(--color-secondary),
+      0 0 18px var(--color-secondary), 0 0 38px var(--color-secondary),
+      0 0 73px var(--color-secondary), 0 0 80px var(--color-secondary),
+      0 0 94px var(--color-secondary), 0 0 140px var(--color-secondary);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

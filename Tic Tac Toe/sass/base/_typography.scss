@@ -1,0 +1,61 @@
+@use "../abstracts" as *;
+
+body {
+  font-weight: 400;
+  line-height: 1.7;
+  font-family: matrix, sans-serif;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+
+  &--main {
+    display: block;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 3rem;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+  }
+}
+
+.heading-secondary {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  letter-spacing: 0.2rem;
+}
+
+.neon-text {
+  color: #fff;
+
+  &--primary {
+    text-shadow:
+        /* White glow */ 0 0 7px #fff, 0 0 10px #fff,
+      0 0 21px #fff, /* Green glow */ 0 0 42px var(--color-primary),
+      0 0 82px var(--color-primary), 0 0 92px var(--color-primary),
+      0 0 102px var(--color-primary), 0 0 151px var(--color-primary);
+  }
+
+  &--secondary {
+    text-shadow:
+        /* White glow */ 0 0 7px #fff, 0 0 10px #fff,
+      0 0 21px #fff, /* Green glow */ 0 0 42px var(--color-secondary),
+      0 0 82px var(--color-secondary), 0 0 92px var(--color-secondary),
+      0 0 102px var(--color-secondary), 0 0 151px var(--color-secondary);
+  }
+
+  &--tertiary {
+    text-shadow:
+        /* White glow */ 0 0 7px #fff, 0 0 10px #fff,
+      0 0 21px #fff, /* Green glow */ 0 0 42px var(--color-tertiary),
+      0 0 82px var(--color-tertiary), 0 0 92px var(--color-tertiary),
+      0 0 102px var(--color-tertiary), 0 0 151px var(--color-tertiary);
+  }
+}

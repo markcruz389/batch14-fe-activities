@@ -1,0 +1,43 @@
+@use '../abstracts' as *;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+
+    @include respond(tab-port) { // width <  900?
+        font-size: 50%; //1 rem 8px, 8/16 = 50%
+    }
+
+    @include respond(phone) { // width <  900?
+        font-size: 35%; //1 rem 8px, 8/16 = 50%
+    }
+}
+
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 5rem;
+    background-color: #010a01;
+    background-image: url(../img/giphy.gif);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    backdrop-filter: blur(3px);
+}
